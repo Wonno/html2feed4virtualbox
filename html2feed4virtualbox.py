@@ -61,7 +61,7 @@ def create_items(_items):
 
 
 def write(args, feed):
-    pretty_xml = xml.dom.minidom.parseString(feed.rss()).toprettyxml()
+    pretty_xml = xml.dom.minidom.parseString(feed.rss()).toprettyxml().encode('utf-8')
     if args.filename:
         f = open(args.filename, "w")
         f.write(pretty_xml)
